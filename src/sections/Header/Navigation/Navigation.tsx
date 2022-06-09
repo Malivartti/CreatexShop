@@ -6,7 +6,17 @@ import SearchInput from "../../../components/Inputs/SearchInput";
 import LikeCount from "../../../components/LikeCount/LikeCount";
 import CartCount from "../../../components/CartCoun/CartCount";
 
-const Navigation: React.FC = () => {
+const menu = ["Women", "Men", "Girls", "Boys", "Sale"];
+
+interface NavigationProps {
+  selectedСategory: null | string;
+  setSelectedCategory: (value: string) => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({
+  selectedСategory,
+  setSelectedCategory,
+}) => {
   const [query, setQuery] = useState<string>("");
 
   const handleQuery = (value: string) => {
@@ -20,13 +30,22 @@ const Navigation: React.FC = () => {
           <Link to="home" className="navigation__logo">
             <LogoIcon />
           </Link>
-          <ul className="list-reset navigation__menu">
-            <li className="navigation__menu-item">Women</li>
-            <li className="navigation__menu-item">Men</li>
-            <li className="navigation__menu-item">Girls</li>
-            <li className="navigation__menu-item">Boys</li>
-            <li className="navigation__menu-item">Sale</li>
-          </ul>
+          <div className="navigation__menu">
+            {menu.map((category) => (
+              <button
+                key={category}
+                type="button"
+                className={`btn-reset navigation__menu-item ${
+                  category === selectedСategory
+                    ? "navigation__menu-item_selected"
+                    : ""
+                }`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="navigation__right">
           <SearchInput

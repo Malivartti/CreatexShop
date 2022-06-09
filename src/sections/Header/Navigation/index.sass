@@ -2,12 +2,17 @@
   padding: 20px 0
   background: #fff
 
+  &__wrapper
+    position: relative
+
   &__container
     display: flex
     justify-content: space-between
     align-items: center
+  
   &__left
     display: flex
+
   &__right
     display: flex
   
@@ -23,8 +28,14 @@
       color: var(--color-gray-800)
       cursor: pointer
 
+      &_selected
+        color: var(--color-primary)
+
       &:not(:last-child)
         margin-right: 40px
+
+      &:last-child
+        color: var(--color-danger)
       
       &:hover
         color: var(--color-danger)
@@ -51,4 +62,3 @@
       background: var(--color-divider-gradient)
       width: 1px
       height: 60%
-    
