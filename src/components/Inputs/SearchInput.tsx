@@ -3,11 +3,14 @@ import "./index.sass";
 import { ReactComponent as SearchBtn } from "../../img/icons/Basic/search.svg";
 
 interface SearchInputProps {
+  // eslint-disable-next-line react/require-default-props
+  className?: string;
   placeholder: string;
   sendValue: (value: string) => void;
 }
 
 const SearchInput: React.FC<SearchInputProps> = ({
+  className = "",
   placeholder,
   sendValue,
 }) => {
@@ -23,7 +26,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   };
 
   return (
-    <form className="input-wrapper" onSubmit={handleSubmit}>
+    <form className={`input-wrapper ${className}`} onSubmit={handleSubmit}>
       <input
         className="input-reset input input-withbtn"
         type="text"

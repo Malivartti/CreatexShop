@@ -1,0 +1,59 @@
+.topbar
+  background: var(--color-gray-900)
+  padding: 12px 0
+
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-weight: 400
+    font-size: 14px
+    line-height: 150%
+    color: #fff
+    opacity: .6
+
+  &__tel
+    color: inherit
+
+    &:hover
+      text-decoration: underline
+
+  &__menu
+    display: flex
+    &-item
+      cursor: pointer
+
+      &:not(:last-child)
+        margin-right: 32px
+      &:hover
+        text-decoration: underline
+
+  &__interaction
+    display: flex
+
+.currency
+  background: transparent
+  border: none
+  font-weight: 400
+  font-size: 14px
+  line-height: 150%
+  color: #fff
+  opacity: .6
+  margin-right: 60px
+  cursor: pointer
+
+.account
+  &__icon
+    width: 15px
+    height: 15px
+    z-index: 2
+    
+  button
+    font-weight: 400
+    font-size: 14px
+    line-height: 150%
+    color: #fff
+    opacity: .6
+
+    &:hover
+      text-decoration: underline

@@ -1,0 +1,54 @@
+.navigation
+  padding: 20px 0
+  background: #fff
+
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__left
+    display: flex
+  &__right
+    display: flex
+  
+  &__logo
+    margin-right: 60px
+  
+  &__menu
+    display: flex
+    &-item
+      font-weight: 700
+      font-size: 16px
+      line-height: 160%
+      color: var(--color-gray-800)
+      cursor: pointer
+
+      &:not(:last-child)
+        margin-right: 40px
+      
+      &:hover
+        color: var(--color-danger)
+  
+  &__searh
+    margin-right: 48px
+    width: 380px
+  
+  &__interaction
+    display: flex
+    justify-content: space-between
+    position: relative
+    
+    &_divider
+      display: flex
+      align-items: center
+      margin-right: 40px
+
+    &_divider::after
+      content: ""
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      background: var(--color-divider-gradient)
+      width: 1px
+      height: 60%
+    
